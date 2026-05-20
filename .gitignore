@@ -6,6 +6,9 @@ out/
 *.log
 *.tmp
 
+# Arquivos temporários do Office (lock ~$)
+~$*
+
 # Sistema operacional
 desktop.ini
 Thumbs.db
