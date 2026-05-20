@@ -1,0 +1,12 @@
+# Arquivos compilados
+out/
+*.class
+
+# Logs e temporários
+*.log
+*.tmp
+
+# Sistema operacional
+desktop.ini
+Thumbs.db
+.DS_Store
