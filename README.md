@@ -8,6 +8,18 @@ NPCs, até se tornar o **Guardião da Natureza**.
 
 ---
 
+## Enredo
+
+A história se passa em uma cidade devastada pela poluição, pelo
+desmatamento e por conflitos ambientais. O jogador cumpre missões
+ecológicas para restaurar o equilíbrio ambiental da cidade, evoluindo
+progressivamente até alcançar o título de **Guardião da Natureza**.
+
+Cada nível é apresentado em uma tela própria, com um trecho da
+narrativa da restauração — basta pressionar ENTER para avançar.
+
+---
+
 ## Grupo
 
 | Integrante                          | RA      |
