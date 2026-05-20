@@ -13,7 +13,7 @@ if errorlevel 1 (
     exit /b 1
 )
 
-java -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -jar "%~dp0UltimaSemente.jar"
+java -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -jar "%~dp0EcoCity.jar"
 
 if errorlevel 1 (
     echo.

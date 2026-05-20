@@ -32,7 +32,7 @@ chmod +x jogar.sh && ./jogar.sh
 
 **Direto pelo terminal:**
 ```bash
-java -jar UltimaSemente.jar
+java -jar EcoCity.jar
 ```
 
 Os scripts `jogar.bat` e `jogar.sh` verificam automaticamente se o Java
@@ -109,5 +109,5 @@ Todos marcados com comentários `// <conceito>` nos arquivos fonte:
 
 ```bash
 javac -encoding UTF-8 -d out/ src/jogo/**/*.java src/jogo/*.java
-jar cfe UltimaSemente.jar jogo.Main -C out/ .
+jar cfe EcoCity.jar jogo.Main -C out/ .
 ```

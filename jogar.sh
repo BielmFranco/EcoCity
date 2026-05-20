@@ -6,4 +6,4 @@ if ! command -v java &> /dev/null; then
     exit 1
 fi
 
-java -Dfile.encoding=UTF-8 -jar UltimaSemente.jar
+java -Dfile.encoding=UTF-8 -jar EcoCity.jar
