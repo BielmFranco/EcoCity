@@ -70,10 +70,15 @@ java -jar EcoCity.jar
 
 - O jogo é textual. Você lê o texto e escolhe **opções numeradas**.
 - Digite o **número** da escolha e aperte **Enter**.
-- Ao criar o personagem: escolha um nome e uma das 4 classes
-  (Biólogo, Engenheiro, Ativista, Explorador).
-- Objetivo: conscientizar os NPCs, restaurar MetroCinza e plantar a
-  semente para transformar a cidade em EcoCity.
+- No menu: `[1]` Iniciar, `[2]` Instruções, `[3]` Créditos, `[4]` Sair.
+- Ao iniciar, digite o nome do seu personagem.
+- Você evolui por **5 níveis** (Explorador → Descontaminador →
+  Botânico → Construtor → Guardião da Natureza).
+- Cada nível N tem N NPCs e N missões — cumpra todas para avançar.
+- Em cada missão, escolha a abordagem:
+  - `[1]` Classe ideal → mais eficiente, ganha bônus.
+  - `[2]` Abordagem comum → gasta mais turnos, sem bônus.
+- Objetivo: somar pontos e tornar-se o **Guardião da Natureza**.
 
 ---
 

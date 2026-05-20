@@ -1,9 +1,10 @@
 # EcoCity 🌱
 ### RPG Textual — APS UNIP 2026/1 | LPOO
 
-RPG educativo inspirado na obra **"O Lorax"** de Dr. Seuss. O jogador
-reintroduz a natureza em uma metrópole dominada pela poluição e
-conscientiza a população sobre sustentabilidade.
+RPG textual educativo inspirado na obra **"O Lorax"** de Dr. Seuss.
+Numa cidade devastada pela poluição e pelo desmatamento, o jogador
+evolui do nível 1 ao 5, cumprindo missões ecológicas entregues por
+NPCs, até se tornar o **Guardião da Natureza**.
 
 ---
 
@@ -40,74 +41,84 @@ está instalado e avisam caso a versão seja incompatível.
 
 ---
 
-## Sobre o Jogo
+## Mecânicas
 
-Você habita **MetroCinza**, uma cidade artificial onde os habitantes
-acreditam viver no mundo ideal: concreto, metal e fumaça. Ao encontrar
-um vestígio de natureza abandonada — a última semente Truffula — você
-decide restaurar a cidade.
+### Níveis e Classes
 
-No início, os moradores alienados resistem à mudança. Ao longo da
-jornada, você conscientiza os cidadãos, que se juntam para reconstruir
-a cidade e transformar MetroCinza em **EcoCity**.
+O jogador evolui por 5 níveis. Cada nível tem um número de missões e
+NPCs igual ao número do nível, com **1 missão por NPC**.
 
-### Personagens
+| Nível | Classe          | Título         | Missões | NPCs |
+|-------|-----------------|----------------|---------|------|
+| 1     | Explorador      | Iniciante      | 1       | 1    |
+| 2     | Descontaminador | Básico         | 2       | 2    |
+| 3     | Botânico        | Intermediário  | 3       | 3    |
+| 4     | Construtor      | Experiente     | 4       | 4    |
+| 5     | Guardião        | Final          | 5       | 5    |
 
-| Personagem        | Tipo        | Papel                                          |
-|-------------------|-------------|------------------------------------------------|
-| Cidadão Aramis    | Cidadão     | Primeiro NPC. Resistente, depois conscientizado.|
-| Dra. Léa Verona   | Aliada      | Última botânica. Fornece itens e missão.       |
-| Guarda Ferro MK-7 | Guarda      | Bloqueia o Jardim Central. Pode ser dialogado. |
-| Diretor Orloff    | Antagonista | Chefe da CorpVerde. Confronto final.           |
+Total: **15 missões** e **15 NPCs** ao longo do jogo.
 
-### Classes do Jogador
+### NPCs e Missões
 
-| Classe     | HP | ATK | DEF | Função                              |
-|------------|----|-----|-----|-------------------------------------|
-| Biólogo    | 80 | 8   | 7   | Plantação e regeneração de áreas    |
-| Engenheiro | 85 | 12  | 10  | Construção e criação                |
-| Ativista   | 70 | 6   | 5   | Convencer cidadãos, reduz resistência social |
-| Explorador | 75 | 10  | 6   | Acessa áreas restritas, recolhe recursos |
+Os NPCs têm interação **direta e mecânica**: entregam a missão e
+registram a conclusão. Não há diálogo de conscientização.
 
-### Níveis
+### Pontuação e Bônus
 
-| Nível    | Título               |
-|----------|----------------------|
-| 1 – 5    | Aprendiz Ecológico   |
-| 6 – 10   | Agente Urbano        |
-| 11+      | Guardião da Cidade   |
-
-### Finais
-
-- **Positivo:** restauração completa da cidade.
-- **Negativo:** a cidade não é restaurada, os NPCs não são
-  conscientizados e a degradação continua.
+- **Base:** sobe com a dificuldade do nível (`nível × 100`).
+- **Bônus de eficiência:** +50 ao cumprir a missão dentro do limite de turnos.
+- **Bônus de classe ideal:** +`nível × 25` ao usar a classe ideal para a missão.
 
 ---
 
-## Conceitos de OO Implementados
+## Conceitos de O.O. Implementados
 
-Todos marcados com comentários `// <conceito>` nos arquivos fonte:
+Todos marcados com comentários explícitos nos arquivos fonte:
 
-- **Encapsulamento** — `Entidade.java`, `Personagem.java`
-- **Método Construtor** — todas as classes
-- **Herança** — `Jogador → Personagem → Entidade`, `NPC → Entidade`, `Pocao → Item`
-- **Sobrecarga** — `NPC.java`, `Pocao.java`, `Inventario.java`
-- **Sobrescrita** — `Jogador.java`, `NPC.java`
-- **Polimorfismo** — `ClassePersonagem.java` (enum com métodos abstratos)
-- **Método Abstrato** — `Entidade.java`, `Item.java`, `Personagem.java`
-- **Classe Abstrata** — `Entidade.java`, `Item.java`, `Personagem.java`
-- **Classe Final** — `SementeTruffula` em `Pocao.java`
-- **Atributo Final** — `ClassePersonagem.java`, `Item.java`, `Inventario.java`
-- **Atributo Estático** — `Entidade.java`, `Mundo.java`, `Terminal.java`
-- **Interface** — `Atacavel.java`, `Utilizavel.java`
-- **Tratamento de Exceções** — `Terminal.java`, `MenuUI.java`, `SistemaCombate.java`, `Main.java`
+| Conceito | Onde |
+|----------|------|
+| Encapsulamento | `Personagem`, `MissaoEcologica`, `NPC` — atributos privados + getters |
+| Construtores | Todas as classes |
+| Herança | `Explorador/Descontaminador/Botanico/Construtor/Guardiao → Personagem` |
+| Sobrecarga | Construtores de `Personagem` e subclasses; `Pontuacao.calcular()` |
+| Sobrescrita | `getTitulo()`, `getClasseIdeal()` nas subclasses; métodos de `Missao` |
+| Classe Abstrata | `Personagem` |
+| Método Abstrato | `Personagem.getTitulo()`, `Personagem.getClasseIdeal()` |
+| Interface | `Missao` |
+| Tratamento de Exceções | `EntradaInvalidaException` em `Main` e `Jogo` (try-catch) |
+
+---
+
+## Estrutura do Projeto
+
+```
+src/guardiao/
+├── Main.java                  ← ponto de entrada, menu, loop try-catch
+├── personagens/
+│   ├── Personagem.java         ← classe abstrata base
+│   ├── Explorador.java         ← nível 1
+│   ├── Descontaminador.java    ← nível 2
+│   ├── Botanico.java           ← nível 3
+│   ├── Construtor.java         ← nível 4
+│   └── Guardiao.java           ← nível 5
+├── missoes/
+│   ├── Missao.java             ← interface
+│   └── MissaoEcologica.java    ← implementação
+├── npc/
+│   └── NPC.java
+├── sistema/
+│   ├── Pontuacao.java          ← cálculo de pontos + bônus
+│   └── Jogo.java               ← orquestra os 5 níveis
+└── excecoes/
+    └── EntradaInvalidaException.java
+```
 
 ---
 
 ## Compilar do Código-Fonte
 
 ```bash
-javac -encoding UTF-8 -d out/ src/jogo/**/*.java src/jogo/*.java
-jar cfe EcoCity.jar jogo.Main -C out/ .
+find src -name "*.java" | xargs javac -encoding UTF-8 -d out/
+jar cfe EcoCity.jar guardiao.Main -C out/ .
+java -jar EcoCity.jar
 ```
