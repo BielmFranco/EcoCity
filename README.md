@@ -1,16 +1,29 @@
-# A Última Semente 🌱
+# EcoCity 🌱
 ### RPG Textual — APS UNIP 2026/1 | LPOO
+
+RPG educativo inspirado na obra **"O Lorax"** de Dr. Seuss. O jogador
+reintroduz a natureza em uma metrópole dominada pela poluição e
+conscientiza a população sobre sustentabilidade.
+
+---
+
+## Grupo
+
+| Integrante                          | RA      |
+|-------------------------------------|---------|
+| Alessandra Cristina da Silva Souza  | R799565 |
+| Caetano de Paula Telles Ribeiro     | R688GC4 |
+| Jhonnatan Pereira Santos            | R363JH0 |
+| Guilherme Moraes Franco             | H386632 |
+| Gabriel Moraes Franco               | H384338 |
 
 ---
 
 ## Como Jogar
 
-**Pré-requisito:** Java 11 ou superior instalado.
+**Pré-requisito:** Java 21 ou superior instalado. Baixe em https://adoptium.net
 
-**Windows:**
-```
-jogar.bat
-```
+**Windows:** dê duplo-clique em `jogar.bat`
 
 **Linux / Mac:**
 ```bash
@@ -22,32 +35,53 @@ chmod +x jogar.sh && ./jogar.sh
 java -jar UltimaSemente.jar
 ```
 
+Os scripts `jogar.bat` e `jogar.sh` verificam automaticamente se o Java
+está instalado e avisam caso a versão seja incompatível.
+
 ---
 
 ## Sobre o Jogo
 
-Em 2157, as árvores Truffula desapareceram. A humanidade sobreviveu, mas perdeu
-sua alma — tornando-se "robôs sociais": funcionais, mas vazios.
+Você habita **MetroCinza**, uma cidade artificial onde os habitantes
+acreditam viver no mundo ideal: concreto, metal e fumaça. Ao encontrar
+um vestígio de natureza abandonada — a última semente Truffula — você
+decide restaurar a cidade.
 
-Você encontrou a última semente Truffula. Sua missão: atravessar Nova Cinzópolis,
-conscientizar seus habitantes e plantar a semente no Jardim Central.
+No início, os moradores alienados resistem à mudança. Ao longo da
+jornada, você conscientiza os cidadãos, que se juntam para reconstruir
+a cidade e transformar MetroCinza em **EcoCity**.
 
-### Personagens do Jogo
+### Personagens
 
-| Personagem       | Tipo        | Papel                                     |
-|------------------|-------------|-------------------------------------------|
-| Velho Aramis     | Cidadão     | Primeiro NPC. Guarda memórias do verde.   |
-| Dra. Léa Verona  | Aliada      | Última botânica. Fornece itens e missão.  |
-| Guarda Ferro MK-7| Inimigo     | Protetor do Jardim Central. Pode ser dialogado. |
-| Diretor Orloff   | Antagonista | Chefe da CorpVerde. Boss final.           |
+| Personagem        | Tipo        | Papel                                          |
+|-------------------|-------------|------------------------------------------------|
+| Cidadão Aramis    | Cidadão     | Primeiro NPC. Resistente, depois conscientizado.|
+| Dra. Léa Verona   | Aliada      | Última botânica. Fornece itens e missão.       |
+| Guarda Ferro MK-7 | Guarda      | Bloqueia o Jardim Central. Pode ser dialogado. |
+| Diretor Orloff    | Antagonista | Chefe da CorpVerde. Confronto final.           |
 
-### Classes Disponíveis
+### Classes do Jogador
 
-| Classe           | HP  | ATK | DEF | Habilidade Especial        |
-|------------------|-----|-----|-----|----------------------------|
-| Catador de Lixo  | 90  | 12  | 8   | Reciclagem Rápida          |
-| Botânico Rebelde | 70  | 8   | 6   | Sporos Tóxicos             |
-| Hacker Ecológico | 65  | 10  | 4   | Sobrecarga Digital         |
+| Classe     | HP | ATK | DEF | Função                              |
+|------------|----|-----|-----|-------------------------------------|
+| Biólogo    | 80 | 8   | 7   | Plantação e regeneração de áreas    |
+| Engenheiro | 85 | 12  | 10  | Construção e criação                |
+| Ativista   | 70 | 6   | 5   | Convencer cidadãos, reduz resistência social |
+| Explorador | 75 | 10  | 6   | Acessa áreas restritas, recolhe recursos |
+
+### Níveis
+
+| Nível    | Título               |
+|----------|----------------------|
+| 1 – 5    | Aprendiz Ecológico   |
+| 6 – 10   | Agente Urbano        |
+| 11+      | Guardião da Cidade   |
+
+### Finais
+
+- **Positivo:** restauração completa da cidade.
+- **Negativo:** a cidade não é restaurada, os NPCs não são
+  conscientizados e a degradação continua.
 
 ---
 
@@ -68,3 +102,12 @@ Todos marcados com comentários `// <conceito>` nos arquivos fonte:
 - **Atributo Estático** — `Entidade.java`, `Mundo.java`, `Terminal.java`
 - **Interface** — `Atacavel.java`, `Utilizavel.java`
 - **Tratamento de Exceções** — `Terminal.java`, `MenuUI.java`, `SistemaCombate.java`, `Main.java`
+
+---
+
+## Compilar do Código-Fonte
+
+```bash
+javac -encoding UTF-8 -d out/ src/jogo/**/*.java src/jogo/*.java
+jar cfe UltimaSemente.jar jogo.Main -C out/ .
+```
