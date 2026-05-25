@@ -1,0 +1,70 @@
+============================================================
+   ECOCITY - MISSOES E RECOMPENSAS
+   APS UNIP 2026/1 | LPOO
+============================================================
+
+CALCULO DE PONTOS POR MISSAO
+------------------------------------------------------------
+  Base            : nivel x 100
+  Bonus eficiencia: +50        (turnos <= limite)
+  Bonus classe    : +nivel x 25 (usar a classe ideal)
+
+  Opcao [1] Classe ideal -> ganha os 2 bonus (valor maximo)
+  Opcao [2] Abordagem comum -> apenas a base
+
+============================================================
+   LISTA DAS 15 MISSOES
+============================================================
+
+NIVEL 1 - Explorador
+------------------------------------------------------------
+  1. Encontrar uma semente rara e planta-la num terreno baldio
+     Base: 100  |  Com bonus: 175
+
+NIVEL 2 - Descontaminador
+------------------------------------------------------------
+  2. Despoluir as aguas do rio central
+     Base: 200  |  Com bonus: 300
+  3. Filtrar o ar toxico da praca principal
+     Base: 200  |  Com bonus: 300
+
+NIVEL 3 - Botanico
+------------------------------------------------------------
+  4. Replantar a mata ciliar destruida
+     Base: 300  |  Com bonus: 425
+  5. Criar uma horta comunitaria
+     Base: 300  |  Com bonus: 425
+  6. Recuperar especies de plantas nativas
+     Base: 300  |  Com bonus: 425
+
+NIVEL 4 - Construtor
+------------------------------------------------------------
+  7. Construir um parque urbano arborizado
+     Base: 400  |  Com bonus: 550
+  8. Instalar paineis solares nos predios
+     Base: 400  |  Com bonus: 550
+  9. Erguer um sistema de captacao de chuva
+     Base: 400  |  Com bonus: 550
+ 10. Criar um corredor verde entre os bairros
+     Base: 400  |  Com bonus: 550
+
+NIVEL 5 - Guardiao da Natureza
+------------------------------------------------------------
+ 11. Restaurar a grande reserva central
+     Base: 500  |  Com bonus: 675
+ 12. Reflorestar a antiga zona industrial
+     Base: 500  |  Com bonus: 675
+ 13. Despoluir o lago da cidade
+     Base: 500  |  Com bonus: 675
+ 14. Selar a ultima fonte de poluicao
+     Base: 500  |  Com bonus: 675
+ 15. Inaugurar o santuario da natureza
+     Base: 500  |  Com bonus: 675
+
+============================================================
+   TOTAIS
+============================================================
+  Missoes totais        : 15
+  Pontuacao maxima ([1]) : 7625
+  Pontuacao minima ([2]) : 5500
+============================================================
