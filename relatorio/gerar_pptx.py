@@ -66,10 +66,8 @@ def add_text(slide, x, y, w, h, text, size=18, bold=False, color=TEXT,
     return tb
 
 def footer(slide, dark=False):
-    color = MUTED if not dark else RGBColor(0x9B, 0xB0, 0xA0)
-    add_text(slide, Inches(0.5), Inches(7.05), Inches(9.5), Inches(0.3),
-             "EcoCity  -  RPG Textual  |  APS UNIP 2026/1  -  LPOO",
-             size=9, color=color, font="Calibri")
+    # rodape removido a pedido - mantida assinatura para compatibilidade
+    return
 
 def slide_number(slide, n, total, dark=False):
     color = MUTED if not dark else RGBColor(0x9B, 0xB0, 0xA0)
@@ -481,17 +479,17 @@ set_bg(s, LIGHT)
 section_header(s, "Estrutura do Codigo", "10")
 
 add_text(s, Inches(0.85), Inches(1.95), Inches(8), Inches(0.4),
-         "14 arquivos .java organizados em 7 pacotes - cada um com 1 responsabilidade",
+         "14 arquivos .java em 7 pacotes",
          size=12, color=MUTED, font="Calibri")
 
 pacotes = [
-    ("Main.java",     "ponto de entrada do jogo (menu)"),
-    ("ui/",           "Terminal: limpa tela + aguarda ENTER"),
-    ("personagens/",  "Personagem (abstrata) + 5 niveis"),
-    ("missoes/",      "Interface Missao + MissaoEcologica"),
-    ("npc/",          "NPC entrega missoes ao jogador"),
-    ("sistema/",      "Jogo (orquestra) + Pontuacao (calcula)"),
-    ("excecoes/",     "EntradaInvalidaException (customizada)"),
+    ("Main.java",     "ponto de entrada"),
+    ("ui/",           "tela e entrada"),
+    ("personagens/",  "Personagem + 5 niveis"),
+    ("missoes/",      "interface + missao"),
+    ("npc/",          "entrega missoes"),
+    ("sistema/",      "Jogo + Pontuacao"),
+    ("excecoes/",     "excecao customizada"),
 ]
 y = 2.6
 for nome, desc in pacotes:
@@ -524,12 +522,12 @@ conc = [
     "Encapsulamento",
     "Construtores",
     "Heranca",
-    "Sobrecarga (overload)",
-    "Sobrescrita (override)",
+    "Sobrecarga",
+    "Sobrescrita",
     "Classe Abstrata",
     "Metodo Abstrato",
     "Interface",
-    "Tratamento de Excecoes",
+    "Excecoes",
 ]
 for i, c in enumerate(conc):
     y = 2.45 + i * 0.42
@@ -565,10 +563,6 @@ for i, sub in enumerate(subs):
     add_text(s, Inches(7.0), Inches(sy + 0.07), Inches(2), Inches(0.3),
              sub, size=12, bold=True, color=TEXT, font="Calibri")
 
-# small note
-add_text(s, Inches(5.15), Inches(6.35), Inches(4.2), Inches(0.4),
-         "5 subclasses herdam de Personagem (abstrata).",
-         size=10, color=MUTED, font="Calibri", align=PP_ALIGN.CENTER)
 footer(s); slide_number(s, 11, TOTAL)
 
 # --------------------------------------------------------------------------- #
@@ -576,21 +570,19 @@ footer(s); slide_number(s, 11, TOTAL)
 # --------------------------------------------------------------------------- #
 s = prs.slides.add_slide(BLANK)
 set_bg(s, DARK)
-section_header(s, "Em Codigo  -  Entrega e Encerramento", "12", dark=True)
+section_header(s, "Codigo e Entrega", "12", dark=True)
 
 # code box
 add_text(s, Inches(0.85), Inches(2.0), Inches(8), Inches(0.4),
-         "EXEMPLO: TRATAMENTO DE EXCECAO NO MENU", size=11, bold=True,
+         "EXEMPLO: try-catch no menu", size=11, bold=True,
          color=ACCENT, font="Calibri")
 code = ("try {\n"
-        "    int opcao = Integer.parseInt(scanner.nextLine().trim());\n"
-        "    if (opcao < 1 || opcao > 4)\n"
-        "        throw new EntradaInvalidaException(\"Opcao invalida.\");\n"
-        "    // ... executa a opcao escolhida ...\n"
+        "    int opcao = Integer.parseInt(scanner.nextLine());\n"
+        "    // executa acao do menu\n"
         "} catch (NumberFormatException e) {\n"
-        "    System.out.println(\"[ERRO] Digite apenas numeros.\");\n"
+        "    System.out.println(\"Digite apenas numeros.\");\n"
         "} catch (EntradaInvalidaException e) {\n"
-        "    System.out.println(\"[ERRO] \" + e.getMessage());\n"
+        "    System.out.println(e.getMessage());\n"
         "}")
 add_rect(s, Inches(0.85), Inches(2.45), Inches(8.3), Inches(2.5),
          fill=RGBColor(0x0A, 0x14, 0x0B),
