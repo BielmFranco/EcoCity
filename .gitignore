@@ -9,6 +9,10 @@ out/
 # Arquivos temporários do Office (lock ~$)
 ~$*
 
+# Artefatos de QA visual da apresentacao (regenerados)
+relatorio/ApresentacaoEcoCity.pdf
+relatorio/slide-*.jpg
+
 # Sistema operacional
 desktop.ini
 Thumbs.db
