@@ -9,9 +9,8 @@ out/
 # Arquivos temporários do Office (lock ~$)
 ~$*
 
-# Artefatos de QA visual da apresentacao (regenerados)
-relatorio/ApresentacaoEcoCity.pdf
-relatorio/slide-*.jpg
+# Pasta relatorio (privada - apenas local, fora do repo publico)
+relatorio/
 
 # Sistema operacional
 desktop.ini
