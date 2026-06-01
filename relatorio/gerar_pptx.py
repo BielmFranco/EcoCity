@@ -95,7 +95,7 @@ prs = Presentation()
 prs.slide_width = Inches(10)
 prs.slide_height = Inches(7.5)
 
-TOTAL = 12
+TOTAL = 13
 BLANK = prs.slide_layouts[6]
 
 # --------------------------------------------------------------------------- #
@@ -608,9 +608,46 @@ add_text(s, Inches(1.1), Inches(5.6), Inches(8), Inches(0.6),
          "github.com/BielmFranco/EcoCity", size=22, bold=True, color=WHITE,
          font="Consolas")
 add_text(s, Inches(1.1), Inches(6.15), Inches(8), Inches(0.4),
-         "Obrigado!  -  EcoCity, APS UNIP 2026/1.",
-         size=14, color=ACCENT, font="Calibri")
+         "Clone, fork ou download ZIP - codigo aberto.",
+         size=13, color=ACCENT, font="Calibri")
 footer(s, dark=True); slide_number(s, 12, TOTAL, dark=True)
+
+# --------------------------------------------------------------------------- #
+# SLIDE 13 - AGRADECIMENTO / OBRIGADO
+# --------------------------------------------------------------------------- #
+s = prs.slides.add_slide(BLANK)
+set_bg(s, DARK)
+add_rect(s, Inches(-1.5), Inches(-1.5), Inches(4.5), Inches(4.5),
+         fill=FOREST, shape=MSO_SHAPE.OVAL)
+add_rect(s, Inches(-0.8), Inches(-0.8), Inches(3), Inches(3),
+         fill=DARK, shape=MSO_SHAPE.OVAL)
+add_rect(s, Inches(7.5), Inches(5.5), Inches(4.5), Inches(4.5),
+         fill=FOREST, shape=MSO_SHAPE.OVAL)
+add_rect(s, Inches(8.2), Inches(6.2), Inches(3), Inches(3),
+         fill=DARK, shape=MSO_SHAPE.OVAL)
+
+add_text(s, Inches(1), Inches(1.6), Inches(9), Inches(2),
+         "Obrigado!", size=96, bold=True, color=WHITE, font="Calibri")
+add_rect(s, Inches(1.05), Inches(3.2), Inches(0.9), Inches(0.05), fill=ACCENT)
+add_text(s, Inches(1.05), Inches(3.4), Inches(8.5), Inches(0.6),
+         "Pela atencao a apresentacao do projeto EcoCity.",
+         size=20, color=ACCENT, font="Calibri")
+add_text(s, Inches(1.05), Inches(4.05), Inches(8.5), Inches(0.5),
+         "Perguntas, sugestoes e ideias sao muito bem-vindas.",
+         size=14, color=RGBColor(0xC8, 0xDA, 0xC0), font="Calibri")
+
+# grupo
+add_text(s, Inches(1.05), Inches(5.0), Inches(2), Inches(0.3),
+         "GRUPO", size=11, bold=True, color=ACCENT, font="Calibri")
+add_text(s, Inches(1.05), Inches(5.32), Inches(9), Inches(1.5),
+         "Alessandra Cristina da Silva Souza  -  R799565\n"
+         "Caetano de Paula Telles Ribeiro     -  R688GC4\n"
+         "Jhonnatan Pereira Santos            -  R363JH0\n"
+         "Guilherme Moraes Franco             -  H386632\n"
+         "Gabriel Moraes Franco               -  H384338",
+         size=10.5, color=WHITE, font="Consolas")
+
+footer(s, dark=True); slide_number(s, 13, TOTAL, dark=True)
 
 # salva
 out_path = r"C:\Users\gabrielf\Desktop\ProjetoAPSEcoCity\relatorio\ApresentacaoEcoCity.pptx"
